@@ -1,0 +1,123 @@
+:root{
+    --clr-primary:hsl(158, 36%, 37%);
+    --clr-primary-dark:hsl(158, 31%, 20%);
+    --clr-secondary:hsl(30, 38%, 92%);
+
+    --clr-neutral-dark:hsl(212, 21%, 14%);
+    --clr-neutral-mild:hsl(228, 12%, 48%);
+    --clr-neutral-light:hsl(0, 0%, 100%);
+
+    --ff-accent:'Fraunces', serif;
+   --ff-normal:'Montserrat', sans-serif;
+
+   --fw-large:700;
+   --fw-small:500;
+}
+
+
+
+
+*{
+    margin: 0;;
+}
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+img,picture,svg{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+input,button{
+    font: inherit;
+}
+body{
+    -webkit-font-smoothing:antialiased;
+    line-height: 1.7;
+}
+p,h1,h2,h3,h4,h5,h6{
+    overflow-wrap: break-word;
+}
+body{
+    font-family: var(--ff-normal);
+    font-weight: var(--fw-small);
+    font-size: 0.875rem;
+    display: grid;
+    place-content:center;
+    background-color: var(--clr-secondary);
+    margin: 1rem;
+}
+.flex-group{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+.perfume{
+    --clm-padding:1.5rem;
+    display: grid;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width:600px;
+    background-color: var(--clr-neutral-light);
+}
+.perfume__description{
+    display: grid;
+    gap: 1rem;
+    padding: var(--clm-padding);
+}
+.perfume__type{
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--clr-neutral-mild);
+}
+.perfume__title{
+    font-family: var(--ff-accent);
+    line-height: 1.2;
+    font-size: 2rem;
+}
+.perfume__info{
+    color: var(--clr-neutral-mild);
+}
+.perfume__price{
+    color: var(--clr-primary);
+    font-family: var(--ff-accent);
+    /* font-weight: var(--fw-large); */
+    font-size:1.5rem;
+}
+.button{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: 0.75rem 1.5rem;
+    color: var(--clr-neutral-light);
+    background-color: var(--clr-primary);
+    border: none;
+    border-radius: 5px;
+    font-weight: var(--fw-large);
+    font-size: 0.875rem;
+}
+.button[data-icon="shopping-cart"]::before{
+    content:"";
+    width: 15px;
+    height: 16px;
+    background-image: url('images/icon-cart.svg');
+    color: var(--clr-neutral-light);
+}
+.button:is(:hover,:focus){
+    background-color: var(--clr-primary-dark);
+
+}
+@media (min-width:600px){
+    .perfume{
+        --clm-padding:2rem;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+.perfume__img img{
+    background-size: cover;
+}
